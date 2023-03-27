@@ -47,10 +47,14 @@ const DetailView = ({
         } else if (detailState === 1) {
             setTmpTitle({ defaultValue: `${selectTitle}` });
             setTmpDesc({ defaultValue: `${selectDesc}` });
+            titleRef.current.value = `${selectTitle}`;
+            descRef.current.value = `${selectDesc}`;
             setTmpDisabled(false);
         } else if (detailState === 2) {
             setTmpTitle({ defaultValue: `${selectTitle}` });
             setTmpDesc({ defaultValue: `${selectDesc}` });
+            titleRef.current.value = `${selectTitle}`;
+            descRef.current.value = `${selectDesc}`;
             setTmpDisabled(true);
         }
 

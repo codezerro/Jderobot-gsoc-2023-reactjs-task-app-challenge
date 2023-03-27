@@ -197,8 +197,8 @@ const App = () => {
         tmpTask["status"] = `pending`;
         tmpTask["createAt"] = new Date().toLocaleString();
 
+        const tmp = [...allTask];
         if (sidebarNav < 2) {
-            const tmp = [...allTask];
             tmp.unshift(tmpTask);
             setAllTask(tmp);
         }
@@ -216,11 +216,11 @@ const App = () => {
         setTitle("");
         setDesc("");
 
-        setSelectTitle(allTask.length > 0 ? allTask[0].title : "");
-        setSelectDesc(allTask.length > 0 ? allTask[0].description : "");
-        setSelectStatus(allTask.length > 0 ? allTask[0].status : "");
-        setSelectDate(allTask.length > 0 ? allTask[0].createAt : "");
-        setSelectId(allTask.length > 0 ? allTask[0].id : "");
+        setSelectTitle(tmp[0].title);
+        setSelectDesc(tmp[0].description);
+        setSelectStatus(tmp[0].status);
+        setSelectDate(tmp[0].createAt);
+        setSelectId(tmp[0].id);
 
         localStorage.setItem("taskData", JSON.stringify(task));
     };
@@ -269,22 +269,33 @@ const App = () => {
 
     // confirm delete func
     const deleteConfirmFunc = (e) => {
-        const tmpTask = [...allTaskData];
-        const stateTask = [...allTask];
+        const tmpTask = allTaskData.filter((el) => el.id != deleteId);
+        const stateTask = allTask.filter((el) => el.id != deleteId);
 
-        const tmpTask2 = tmpTask.filter((el) => el.id != deleteId);
+        // const tmpTask2 =
 
-        setAllTaskData(tmpTask2);
-        setAllTask(stateTask.filter((el) => el.id != deleteId));
+        setAllTaskData(tmpTask);
+        setAllTask(stateTask);
 
         if (sidebarNav < 2) setTaskLen((prev) => prev - 1);
         else if (sidebarNav === 2) setCompleteTaskLen((prev) => prev - 1);
         setAllTaskLen((prev) => prev - 1);
 
-        localStorage.setItem("taskData", JSON.stringify(tmpTask2));
+        localStorage.setItem("taskData", JSON.stringify(tmpTask));
         // reset state
         setDeleteId("");
         setDelModalStatus(false);
+
+        setSelectTitle(stateTask.length > 0 ? stateTask[0].title : "");
+        setSelectDesc(stateTask.length > 0 ? stateTask[0].description : "");
+        setSelectStatus(stateTask.length > 0 ? stateTask[0].status : "");
+        setSelectDate(stateTask.length > 0 ? stateTask[0].createAt : "");
+        setSelectId(stateTask.length > 0 ? stateTask[0].id : "");
+        // setDetailState(2);
+
+        console.log("stateTask ", stateTask);
+        // setTitle("");
+        // setDesc("");
     };
 
     // search task func
@@ -372,6 +383,11 @@ const App = () => {
     };
     return (
         <>
+            <DeleteConfirmModal
+                delModalStatus={delModalStatus}
+                setDelModalStatus={setDelModalStatus}
+                deleteConfirmFunc={deleteConfirmFunc}
+            />
             <div className='w-full xh-screen xbg-red-900 xoverflow-hidden'>
                 {/* sidebar */}
                 <SideBar
