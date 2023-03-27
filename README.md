@@ -20,7 +20,6 @@
 
 This app has basic functionality of a task app.
 </br>
-![main pic](./images/main.png)
 ![main pic](./images/task-app.gif)
 
 <!-- GETTING STARTED -->
