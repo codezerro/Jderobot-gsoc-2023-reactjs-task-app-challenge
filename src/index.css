@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
+}
+body {
+    position: absolute;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+@font-face {
+    font-family: "lobster";
+    src: url("./../src/assets/fonts/Lobster-Regular.ttf") format("truetype");
+}
+
+.filter-button {
+    position: fixed;
+    right: 42%;
+    bottom: 12px;
+}
+.filter-button-inner {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+/* Task */
+/* Task View */
+.adj-h {
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    padding-top: 570px;
+    padding-bottom: 100px;
+}
