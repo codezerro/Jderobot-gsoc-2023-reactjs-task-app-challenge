@@ -40,7 +40,7 @@ This software need available on your local computer to run the app.
 
 1. Clone the repo
     ```sh
-    git clone https://github.com/codezerro/jderobot-task-app.git
+    git clone https://github.com/codezerro/Jderobot-gsoc-2023-reactjs-task-app-challenge.git
     ```
 2. Install NPM packages
     ```sh
