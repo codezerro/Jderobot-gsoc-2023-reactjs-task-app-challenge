@@ -2,7 +2,7 @@
 <div align="center">
   <img src="./public/task-app-icon.svg" alt="Logo" width="40" height="40">
 
-  <h3 align="center">JdeRobot React Task App</h3>
+  <h3 align="center">JdeRobot React Task App Challenge</h3>
 
   <p align="center">
     This task app build with reactjs to complete programming test.
