@@ -8,9 +8,7 @@ import {
     SideBar,
     TaskView,
     DetailView,
-    AddTaskModal,
     DeleteConfirmModal,
-    LoadingSpinning,
 } from "./components";
 
 const PathNavigation = ["/", "/task", "/complete"];
@@ -292,10 +290,6 @@ const App = () => {
         setSelectDate(stateTask.length > 0 ? stateTask[0].createAt : "");
         setSelectId(stateTask.length > 0 ? stateTask[0].id : "");
         // setDetailState(2);
-
-        console.log("stateTask ", stateTask);
-        // setTitle("");
-        // setDesc("");
     };
 
     // search task func
