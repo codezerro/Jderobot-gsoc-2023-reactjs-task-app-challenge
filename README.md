@@ -1,8 +1,6 @@
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="./public/task-app-icon.svg" alt="Logo" width="40" height="40">
-  </a>
+  <img src="./public/task-app-icon.svg" alt="Logo" width="40" height="40">
 
   <h3 align="center">JdeRobot React Task App</h3>
 
